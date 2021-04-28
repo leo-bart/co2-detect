@@ -49,7 +49,7 @@ Finally, because we are assuming that our measurement is relative to clean atmos
 # Important limitations
 Other types of detectable gases **must be absent** from the measured environment. Their presence will affect the values obtained.
 
-Air umidity amd temperature corrections are no yet implemented here.
+Air umidity and temperature corrections are no yet implemented here.
 
 # CO<sub>2</sub> Data
 Global CO2 concentrations are measured worldwide and condensed on the [Global Monitoring Laboratory](https://www.esrl.noaa.gov/gmd/). In particular, global trends on several latitudes are shown on the followng graphic:

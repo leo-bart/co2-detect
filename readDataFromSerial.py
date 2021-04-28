@@ -9,7 +9,8 @@ import datetime as dt
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
-data_list = [['Tempo','concentração_ppm','resistência_ohm']]
+data_list = [['Tempo','concentração_ppm','resistência_ohm','umidade_perc',
+              'temperatura_Celsius']]
 
 # This function is called periodically from FuncAnimation
 def animate(i, xs, ys):
@@ -29,7 +30,7 @@ def animate(i, xs, ys):
     # saves data every minute
     if (time%60 == 0):
         print('flush')
-        data_list.append([dt.datetime.today(),y[0],y[1]])
+        data_list.append([dt.datetime.today(),y[0],y[1],y[2],y[3]])
 
 
     # Limit x and y lists to 20 items

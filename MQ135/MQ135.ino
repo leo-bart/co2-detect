@@ -15,7 +15,7 @@ LOG_SLOPE is a for CO2
 #define DHTTYPE DHT11           // DHT sensor type
 #define FACTORB 115.0758        // this is the default b constant for the exponential sensitivity curve
 #define RES_L 1000.             // the R_L resistance value. May vary from sensor to sensor
-#define RES_CLEAN 7450.         // sensor resistance at 100 ppm NH3 (considering the datasheet data) - measured after warm-up
+#define RES_CLEAN 6750.         // sensor resistance at 100 ppm NH3 (considering the datasheet data) - measured after warm-up
 #define CLEAN_AIR_RATIO 3.6     // R to R_0 ratio measured on clean air
 #define STD_CO2_PPM_AIR 410.0   // default CO2 concentration on clean air. Check at co2.earth
 #define PUSH_BUTTON 9           // pin which push button is attached to 
@@ -48,34 +48,30 @@ void loop(){
   float ratioR = CLEAN_AIR_RATIO * resS / resCleanAir;
   float conc = STD_CO2_PPM_AIR + FACTORB * pow(ratioR , LOG_SLOPE);      // CO2 concentration
 
-/*
   // humidity
   float humi  = dht.readHumidity();
   // temperature in Celsius degrees
   float tempC = dht.readTemperature();
-*/
 
 
   // if button is pushed
   if (digitalRead(9) == HIGH){ 
     resCleanAir = resS;
-    Serial.print("Clean air resistance redefined to ");
-    Serial.print(resCleanAir,6);
-    Serial.println(" ohms");
   }
 
 
   
   Serial.print(conc);
   Serial.print("  |  ");
-  Serial.println(resS);
-  /*Serial.print(humi);
-  Serial.print("%");
+  Serial.print(resS);
+  Serial.print("  |  ");
+  Serial.print(humi);
+  // Serial.print("%");
   Serial.print("  |  "); 
-  Serial.print(tempC);
-  Serial.println(" °C");*/
+  Serial.println(tempC);
+  // Serial.println(" °C");*/
     
-  delay(1000);
+  delay(100);
 
 
 }
