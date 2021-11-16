@@ -8,7 +8,7 @@ gofango topic.
 import rospy
 from std_msgs.msg import Float32, Bool
 
-limitConcentration = 750.
+limitConcentration = 700.
 allowedConcentration = 500.
 
 # instantiates fan signal publisher
