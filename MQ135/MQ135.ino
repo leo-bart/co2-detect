@@ -71,7 +71,7 @@ void loop(){
   Serial.println(tempC);
   // Serial.println(" °C");*/
     
-  delay(100);
+  delay(1000);
 
 
 }

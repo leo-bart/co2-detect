@@ -1,0 +1,8 @@
+prefix=/home/leonardo/git/co2-detect/catkin_ws/devel
+
+Name: readCO2
+Description: Description of readCO2
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

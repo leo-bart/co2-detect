@@ -19,7 +19,6 @@ def animate(i, xs, ys):
     data = ser.readline()
     y = data.decode()
     y = [float(i) for i in str.split(y,'|')] # converts to float list
-    #print(y[0])
     
 
     # Add x and y to lists
@@ -28,7 +27,7 @@ def animate(i, xs, ys):
     ys.append(y[0])
     
     # saves data every minute
-    if (time%60 == 0):
+    if (time%30 == 0):
         print('flush')
         data_list.append([dt.datetime.today(),y[0],y[1],y[2],y[3]])
 
@@ -42,7 +41,7 @@ def animate(i, xs, ys):
     ax.plot(xs, ys)
 
     # Format plot
-    ax.set_ylim([300, 1000])
+    # ax.set_ylim([300, 600])
     plt.xticks(rotation=90, ha='right')
     plt.subplots_adjust(bottom=0.30)
     plt.title('MQ135 read')

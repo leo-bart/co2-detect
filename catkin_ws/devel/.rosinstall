@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/leonardo/git/co2-detect/catkin_ws/devel/setup.sh
